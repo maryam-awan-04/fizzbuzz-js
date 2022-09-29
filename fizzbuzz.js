@@ -3,25 +3,34 @@
 // Here, we create our main function.
 function fizzbuzz() {
     
-    console.log('Welcome to FizzBuzz!');
+    for (let i = 1; i <= 110; i++) {
 
-    var i;
+        let word = ['fizz', 'buzz', 'bang']
+        let output = ''
 
-    for (i = 3; i <= 100; i++) {
-        if ((i % 3 == 0) && (i % 5 == 0)) {
-            console.log("fizzbuzz")
+        // divisible by 7
+        if (i % 7 === 0){
+            // divisible by 3, 5 and 7
+            if ((i % 3 === 0) && (i % 5 === 0)) {output = [word[0],word[1],word[2]].join('')}
+            else if (i % 3 === 0) {output = [word[0],word[2]].join('')}
+            else if (i % 5 === 0) {output = [word[1],word[2]].join('')}
+            else {output = word[2]}
         }
-        else if (i % 3 == 0) {
-            console.log("fizz");
-        }
-        else if (i % 5 == 0) {
-            console.log("buzz")
-        }
-        else {
-            console.log(i);
-        }
+
+        // divisible by 3 and by 5
+        else if ((i % 3 === 0) && (i % 5 === 0)) {output = [word[0],word[1]].join('')}
+
+        // divisible by 3
+        else if (i % 3 === 0) {output = word[0]}
+
+        // divisible by 5
+        else if (i % 5 === 0) {output = word[1]}
+        
+        // prints word
+        if (output === '') {console.log(i)}
+        else {console.log(output)}
+
     }
-
     
 }
 
