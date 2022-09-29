@@ -5,11 +5,13 @@ function fizzbuzz() {
     
     for (let i = 1; i <= 110; i++) {
 
-        let word = ['fizz', 'buzz', 'bang']
+        let word = ['fizz', 'buzz', 'bang', 'bong']
         let output = ''
 
+        if (i % 11 === 0) {output = word[3]}
+
         // divisible by 7
-        if (i % 7 === 0){
+        else if (i % 7 === 0){
             // divisible by 3, 5 and 7
             if ((i % 3 === 0) && (i % 5 === 0)) {output = [word[0],word[1],word[2]].join('')}
             else if (i % 3 === 0) {output = [word[0],word[2]].join('')}
